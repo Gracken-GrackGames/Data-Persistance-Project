@@ -40,9 +40,12 @@ public class MenuUIHandler : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ShowScores()
+    public void ResetScores()
     {
-
+        MenuManager.Instance.bestPlayerName = "";
+        MenuManager.Instance.highScore = 0;
+        MenuManager.Instance.SaveGameInfo(MenuManager.Instance.highScore);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void EndGame()
